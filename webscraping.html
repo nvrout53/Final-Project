@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Webscraping — 2023 NBA draft web scraping project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Webscraping</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mission.html">Mission</a>
+      <a href="database.html">Database</a>
+      <a href="data.html">Non‑US Players (Data)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Webscraping</h2>
+      <p>For my webscraping I started in Google Colab. The code I used is separated below.</p>
+
+      <h3>Code</h3>
+      <pre><code>import requests
+from bs4 import BeautifulSoup
+
+headers = {
+    "User-Agent": "MyWikiScraper/1.0 (+https://github.com/nvrout53; nicky073104@gmail.com)",
+}
+
+resp = requests.get('https://en.wikipedia.org/wiki/2023_NBA_draft', headers=headers).text
+soup = BeautifulSoup(resp, 'html.parser')
+
+# Then I used Google Colab to write a CSV from the parsed page and uploaded it to GitHub.
+      </code></pre>
+
+      <p>I asked Google Colab's agent to create a CSV from the webpage using the code above, then I imported it to GitHub.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Non‑US Players — 2023 NBA draft web scraping project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Non‑US Players (from 2023 NBA Draft)</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mission.html">Mission</a>
+      <a href="webscraping.html">Webscraping</a>
+      <a href="database.html">Database</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Interactive Table</h2>
+      <p>Below is the table of players who are not from the United States. Use the search box to filter and click column headers to sort.</p>
+
+      <div class="controls">
+        <input id="search" placeholder="Search (player, nationality, team)" />
+      </div>
+
+      <div id="table-wrap"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

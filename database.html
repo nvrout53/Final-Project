@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Database — 2023 NBA draft web scraping project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Database</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mission.html">Mission</a>
+      <a href="webscraping.html">Webscraping</a>
+      <a href="data.html">Non‑US Players (Data)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Database</h2>
+      <p>Once I got the CSV of the draft to GitHub I asked GitHub's agent to create a database using the CSV I imported. Using the database I queried the following:</p>
+
+      <pre><code>SELECT Nationality, COUNT(*) as count
+FROM nba_draft_2023
+GROUP BY Nationality
+ORDER BY count DESC;</code></pre>
+
+      <p>Then I asked the Copilot agent: "could you make a query that shows the players that aren't from the United States". The query returned the non‑US players and was:</p>
+
+      <pre><code>SELECT Player, Nationality, Team, "School / club team", Pick, "Rnd."
+FROM nba_draft_2023
+WHERE Nationality IS NOT NULL AND TRIM(Nationality) <> 'United States'
+ORDER BY Nationality, Pick;</code></pre>
+
+      <p>The results of that query are available on the <a href="data.html">Data</a> page.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back</a></p>
+  </footer>
+</body>
+</html>
